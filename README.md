@@ -11,7 +11,7 @@ Based on various market surveys, the consulting firm has gathered a large datase
  
 <br>
 <strong>Business Goal </strong>
-<br>
+
 You are required to model the price of cars with the available independent variables. It will be used by the management to understand how exactly the prices vary with the independent variables. They can accordingly manipulate the design of the cars, the business strategy etc. to meet certain price levels. Further, the model will be a good way for management to understand the pricing dynamics of a new market. 
 
 <br> 
@@ -24,7 +24,7 @@ There is a variable named CarName which is comprised of two parts - the first wo
 <strong>Model Evaluation:</strong>
 
 When you're done with model building and residual analysis, and have made predictions on the test set, just make sure you use the following two lines of code to calculate the R-squared score on the test set.
- 
+<br>
 from sklearn.metrics import r2_score
 r2_score(y_test, y_pred)
 where y_test is the test data set for the target variable, and y_pred is the variable containing the predicted values of the target variable on the test set.
