@@ -1,49 +1,34 @@
-# House-Price-Prediction IIITB
-A US-based housing company named Surprise Housing has decided to enter the Australian market. The company uses data analytics to purchase houses at a price below their actual values and flip them on at a higher price. For the same purpose, the company has collected a data set from the sale of houses in Australia. The data is provided in the CSV file below.
+# Geely-Auto-Price-Prediction
+Problem Statement
+A Chinese automobile company Geely Auto aspires to enter the US market by setting up their manufacturing unit there and producing cars locally to give competition to their US and European counterparts. 
 
  
 
-The company is looking at prospective properties to buy to enter the market. You are required to build a regression model using regularisation in order to predict the actual value of the prospective properties and decide whether to invest in them or not.
+They have contracted an automobile consulting company to understand the factors on which the pricing of cars depends. Specifically, they want to understand the factors affecting the pricing of cars in the American market, since those may be very different from the Chinese market. The company wants to know:
+
+Which variables are significant in predicting the price of a car
+How well those variables describe the price of a car
+Based on various market surveys, the consulting firm has gathered a large dataset of different types of cars across the Americal market. 
 
  
 
-The company wants to know:
+Business Goal 
 
-Which variables are significant in predicting the price of a house, and
-
-How well those variables describe the price of a house.
+You are required to model the price of cars with the available independent variables. It will be used by the management to understand how exactly the prices vary with the independent variables. They can accordingly manipulate the design of the cars, the business strategy etc. to meet certain price levels. Further, the model will be a good way for management to understand the pricing dynamics of a new market. 
 
  
 
-Also, determine the optimal value of lambda for ridge and lasso regression.
+Data Preparation
 
-Assignment Part-II
-
-Question 1
-
-What is the optimal value of alpha for ridge and lasso regression? What will be the changes in the model if you choose double the value of alpha for both ridge and lasso? What will be the most important predictor variables after the change is implemented?
-
+There is a variable named CarName which is comprised of two parts - the first word is the name of 'car company' and the second is the 'car model'. For example, chevrolet impala has 'chevrolet' as the car company name and 'impala' as the car model name. You need to consider only company name as the independent variable for model building. 
  
 
-Question 2
+Model Evaluation:
 
-You have determined the optimal value of lambda for ridge and lasso regression during the assignment. Now, which one will you choose to apply and why?
-
+When you're done with model building and residual analysis, and have made predictions on the test set, just make sure you use the following two lines of code to calculate the R-squared score on the test set.
  
+from sklearn.metrics import r2_score
+r2_score(y_test, y_pred)
+where y_test is the test data set for the target variable, and y_pred is the variable containing the predicted values of the target variable on the test set.
 
-Question 3
-
-After building the model, you realised that the five most important predictor variables in the lasso model are not available in the incoming data. You will now have to create another model excluding the five most important predictor variables. Which are the five most important predictor variables now?
-
- 
-
-Question 4
-
-How can you make sure that a model is robust and generalisable? What are the implications of the same for the accuracy of the model and why?
-
- 
-
-# Business Goal 
-
-You are required to model the price of houses with the available independent variables. This model will then be used by the management to understand how exactly the prices vary with the variables. They can accordingly manipulate the strategy of the firm and concentrate on areas that will yield high returns. Further, the model will be a good way for management to understand the pricing dynamics of a new market.
-Ridge and Lasso Regeression
+Please don't forget to perform this step as the R-squared score on the test set holds some marks. The variable names inside the 'r2_score' function can be different based on the variable names you have chosen.
